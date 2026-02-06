@@ -1,0 +1,44 @@
+name: NamedVillagers
+version: '1.0.0'
+main: com.arcanestudios.namedvillagers.NamedVillagers
+api-version: '1.19'
+author: Arcane Studios
+description: Automatic villager naming system with profession and biome-based names
+website: https://github.com/arcanestudios/NamedVillagers
+
+commands:
+  namedvillagers:
+    description: Main NamedVillagers command
+    usage: |
+      /<command> <name> - Rename the villager you're looking at
+      /<command> random - Give a random name to the villager
+      /<command> reload - Reload the plugin configuration
+    aliases: [nv, villagernames]
+    permission: namedvillagers.use
+
+permissions:
+  namedvillagers.use:
+    description: Allows basic use of the plugin commands
+    default: true
+    children:
+      namedvillagers.rename: true
+  
+  namedvillagers.rename:
+    description: Allows renaming villagers manually
+    default: op
+  
+  namedvillagers.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  
+  namedvillagers.bypass:
+    description: Prevents automatic naming of villagers for players with this permission
+    default: false
+  
+  namedvillagers.*:
+    description: Grants all NamedVillagers permissions
+    default: op
+    children:
+      namedvillagers.rename: true
+      namedvillagers.reload: true
+      namedvillagers.use: true

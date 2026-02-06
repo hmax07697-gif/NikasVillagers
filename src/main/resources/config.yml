@@ -1,0 +1,509 @@
+# NamedVillagers Configuration
+# Plugin version: 1.0.0
+
+# General Settings
+settings:
+  # Automatically name villagers when they spawn
+  auto-name: true
+  
+  # Chance for a legendary prefix (0-100)
+  legendary-chance: 5
+  
+  # Name format: simple, titled, or fullname
+  # simple: "Aldric"
+  # titled: "Aldric the Librarian"
+  # fullname: "Aldric Thornwood"
+  format: "titled"
+  
+  # Show profession level in name (Novice, Apprentice, Journeyman, Expert, Master)
+  show-level: true
+  
+  # Rename zombie villagers when they're cured (if false, keeps original name)
+  rename-on-cure: false
+  
+  # Use biome-specific name pools
+  biome-specific: true
+  
+  # Debug mode (shows additional console messages)
+  debug: false
+
+# Messages sent to players
+messages:
+  prefix: "&8[&6NamedVillagers&8]&r "
+  no-permission: "&cYou don't have permission to use this command."
+  not-looking-at-villager: "&cYou must be looking at a villager!"
+  villager-renamed: "&aVillager renamed to: &f{name}"
+  villager-random-named: "&aVillager given random name: &f{name}"
+  config-reloaded: "&aConfiguration reloaded successfully!"
+  invalid-usage: "&cUsage: /nv <name> | /nv random | /nv reload"
+
+# Legendary prefixes (5% chance by default)
+legendary-prefixes:
+  - "Elder"
+  - "Master"
+  - "Wise"
+  - "Ancient"
+  - "Renowned"
+  - "Grand"
+  - "Legendary"
+
+# Profession-based name pools
+names:
+  professions:
+    # Armorer names
+    armorer:
+      first:
+        - "Thorgrim"
+        - "Brunhilde"
+        - "Magnus"
+        - "Helga"
+        - "Ragnar"
+        - "Astrid"
+        - "Bjorn"
+        - "Freya"
+      last:
+        - "Platesmith"
+        - "Steelguard"
+        - "Ironshield"
+        - "Armorwright"
+        - "Battleforge"
+        - "Chainmail"
+    
+    # Butcher names
+    butcher:
+      first:
+        - "Gunther"
+        - "Bertha"
+        - "Klaus"
+        - "Gertrude"
+        - "Hans"
+        - "Matilda"
+        - "Otto"
+        - "Brunhilda"
+      last:
+        - "Cleaver"
+        - "Meatcutter"
+        - "Butcher"
+        - "Sausage"
+        - "Chop"
+        - "Carver"
+    
+    # Cartographer names
+    cartographer:
+      first:
+        - "Marco"
+        - "Isabella"
+        - "Ferdinand"
+        - "Catalina"
+        - "Vasco"
+        - "Beatriz"
+        - "Amerigo"
+        - "Eliza"
+      last:
+        - "Compass"
+        - "Wayfinder"
+        - "Mapwright"
+        - "Navigator"
+        - "Chartvale"
+        - "Pathseeker"
+    
+    # Cleric names
+    cleric:
+      first:
+        - "Benedict"
+        - "Cecilia"
+        - "Augustine"
+        - "Hildegard"
+        - "Ambrose"
+        - "Catherine"
+        - "Gregory"
+        - "Teresa"
+      last:
+        - "Holywater"
+        - "Prayerbrook"
+        - "Lightbringer"
+        - "Faithful"
+        - "Devout"
+        - "Blessed"
+    
+    # Farmer names
+    farmer:
+      first:
+        - "William"
+        - "Emma"
+        - "Thomas"
+        - "Mary"
+        - "George"
+        - "Alice"
+        - "Henry"
+        - "Rose"
+      last:
+        - "Greenfield"
+        - "Harvest"
+        - "Cropwell"
+        - "Wheatley"
+        - "Seedling"
+        - "Plowman"
+    
+    # Fisherman names
+    fisherman:
+      first:
+        - "Morgan"
+        - "Marina"
+        - "Dylan"
+        - "Pearl"
+        - "Wade"
+        - "Coral"
+        - "Fisher"
+        - "Brook"
+      last:
+        - "Netweaver"
+        - "Angler"
+        - "Deepwater"
+        - "Catchwell"
+        - "Seaborn"
+        - "Tidecaller"
+    
+    # Fletcher names
+    fletcher:
+      first:
+        - "Robin"
+        - "Marian"
+        - "Archer"
+        - "Diana"
+        - "Talon"
+        - "Artemis"
+        - "Hawkeye"
+        - "Willow"
+      last:
+        - "Arrowsmith"
+        - "Bowwright"
+        - "Fletchley"
+        - "Quickshot"
+        - "Trueflight"
+        - "Feathercraft"
+    
+    # Leatherworker names
+    leatherworker:
+      first:
+        - "Tanner"
+        - "Suede"
+        - "Cole"
+        - "Sable"
+        - "Buck"
+        - "Fawn"
+        - "Hunter"
+        - "Amber"
+      last:
+        - "Hideworker"
+        - "Tannery"
+        - "Leatherby"
+        - "Pelts"
+        - "Rawhide"
+        - "Skinner"
+    
+    # Librarian names
+    librarian:
+      first:
+        - "Aldric"
+        - "Beatrice"
+        - "Cedric"
+        - "Delphine"
+        - "Edmund"
+        - "Florence"
+        - "Gideon"
+        - "Helena"
+      last:
+        - "Bookwright"
+        - "Thornwood"
+        - "Inkwell"
+        - "Pageturner"
+        - "Scribe"
+        - "Wisewood"
+    
+    # Mason/Stonemason names
+    mason:
+      first:
+        - "Granite"
+        - "Marble"
+        - "Flint"
+        - "Onyx"
+        - "Cobalt"
+        - "Slate"
+        - "Mason"
+        - "Petra"
+      last:
+        - "Stonecutter"
+        - "Rockwell"
+        - "Quarry"
+        - "Bricksworth"
+        - "Masonry"
+        - "Cornerstone"
+    
+    # Shepherd names
+    shepherd:
+      first:
+        - "Abel"
+        - "Rachel"
+        - "Jacob"
+        - "Leah"
+        - "Shepherd"
+        - "Meadow"
+        - "Wool"
+        - "Cotton"
+      last:
+        - "Woolworth"
+        - "Shepherd"
+        - "Flockmaster"
+        - "Lambton"
+        - "Pastoral"
+        - "Shearer"
+    
+    # Toolsmith names
+    toolsmith:
+      first:
+        - "Anvil"
+        - "Forge"
+        - "Hammersmith"
+        - "Ingrid"
+        - "Smithson"
+        - "Tempera"
+        - "Striker"
+        - "Quench"
+      last:
+        - "Ironforge"
+        - "Steelheart"
+        - "Anvil"
+        - "Hammerhand"
+        - "Toolwright"
+        - "Craftsman"
+    
+    # Weaponsmith names
+    weaponsmith:
+      first:
+        - "Blade"
+        - "Valeria"
+        - "Thorin"
+        - "Brigida"
+        - "Maximus"
+        - "Xena"
+        - "Spartacus"
+        - "Athena"
+      last:
+        - "Swordsmith"
+        - "Bladeforge"
+        - "Steelstrike"
+        - "Warforge"
+        - "Armament"
+        - "Weaponwright"
+    
+    # Nitwit names (unemployed villagers)
+    nitwit:
+      first:
+        - "Bob"
+        - "Doris"
+        - "Larry"
+        - "Mabel"
+        - "Chester"
+        - "Edna"
+        - "Norman"
+        - "Gladys"
+      last:
+        - "Simple"
+        - "Wanderer"
+        - "Daydreamer"
+        - "Idle"
+        - "Loafer"
+        - "Drifter"
+    
+    # Unemployed/None (newly spawned without profession)
+    none:
+      first:
+        - "Young"
+        - "New"
+        - "Fresh"
+        - "Junior"
+        - "Apprentice"
+        - "Novice"
+        - "Rookie"
+        - "Greenhorn"
+      last:
+        - "Seeker"
+        - "Hopeful"
+        - "Wanderer"
+        - "Explorer"
+        - "Learner"
+        - "Student"
+
+# Biome-specific name pools (used when biome-specific setting is true)
+biomes:
+  # Desert biomes
+  desert:
+    first:
+      - "Zahir"
+      - "Farah"
+      - "Rashid"
+      - "Amina"
+      - "Khalil"
+      - "Jasmine"
+      - "Omar"
+      - "Layla"
+    last:
+      - "Sandwalker"
+      - "Dunestrider"
+      - "Oasis"
+      - "Sunborne"
+      - "Mirage"
+      - "Desertsong"
+  
+  # Plains biomes
+  plains:
+    first:
+      - "William"
+      - "Eleanor"
+      - "James"
+      - "Charlotte"
+      - "Arthur"
+      - "Victoria"
+      - "Edward"
+      - "Margaret"
+    last:
+      - "Meadowbrook"
+      - "Plainfield"
+      - "Grassland"
+      - "Horizonview"
+      - "Windswept"
+      - "Openfield"
+  
+  # Forest/Taiga biomes
+  taiga:
+    first:
+      - "Olaf"
+      - "Astrid"
+      - "Sven"
+      - "Ingrid"
+      - "Erik"
+      - "Sigrid"
+      - "Lars"
+      - "Freya"
+    last:
+      - "Pinebrook"
+      - "Frostwood"
+      - "Snowpeak"
+      - "Iceborn"
+      - "Wintervale"
+      - "Coldridge"
+  
+  # Jungle biomes
+  jungle:
+    first:
+      - "Kai"
+      - "Leilani"
+      - "Tane"
+      - "Moana"
+      - "Koa"
+      - "Alani"
+      - "Mako"
+      - "Nani"
+    last:
+      - "Vineheart"
+      - "Canopywalker"
+      - "Jungleborn"
+      - "Wildgrowth"
+      - "Greenvale"
+      - "Rainforest"
+  
+  # Swamp biomes
+  swamp:
+    first:
+      - "Mordecai"
+      - "Morgana"
+      - "Silas"
+      - "Rowena"
+      - "Thaddeus"
+      - "Selene"
+      - "Cyrus"
+      - "Belladonna"
+    last:
+      - "Marshwalker"
+      - "Bogwater"
+      - "Nightshade"
+      - "Mistborn"
+      - "Murkmire"
+      - "Fenland"
+  
+  # Savanna biomes
+  savanna:
+    first:
+      - "Jabari"
+      - "Zuri"
+      - "Kofi"
+      - "Nia"
+      - "Tau"
+      - "Imani"
+      - "Kojo"
+      - "Asha"
+    last:
+      - "Sunrunner"
+      - "Goldgrass"
+      - "Savannasong"
+      - "Pridewalker"
+      - "Acacia"
+      - "Wildplains"
+  
+  # Snowy biomes
+  snowy:
+    first:
+      - "Frostine"
+      - "Glacius"
+      - "Crystal"
+      - "Boreas"
+      - "Snow"
+      - "Winter"
+      - "Ice"
+      - "Aurora"
+    last:
+      - "Snowfall"
+      - "Icewalker"
+      - "Frostborne"
+      - "Winterheart"
+      - "Glaciervale"
+      - "Coldreach"
+  
+  # Mountain biomes
+  mountains:
+    first:
+      - "Peak"
+      - "Summit"
+      - "Ridge"
+      - "Alpine"
+      - "Cliff"
+      - "Mesa"
+      - "Highland"
+      - "Crag"
+    last:
+      - "Stonehelm"
+      - "Mountaineer"
+      - "Highpeak"
+      - "Cliffborn"
+      - "Rockridge"
+      - "Summitreach"
+  
+  # Mushroom biomes
+  mushroom_fields:
+    first:
+      - "Spore"
+      - "Fungi"
+      - "Myco"
+      - "Truffle"
+      - "Morel"
+      - "Chanterelle"
+      - "Portobello"
+      - "Shiitake"
+    last:
+      - "Capweaver"
+      - "Sporeling"
+      - "Mycelium"
+      - "Fungifolk"
+      - "Mushroomvale"
+      - "Sporedrift"
